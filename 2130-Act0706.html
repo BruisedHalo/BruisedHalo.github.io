@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <title>Car Game</title>
+</head>
+<body onkeydown="movePlayer(event);">
+<canvas id=mygame width=800 height=600 style="border: 1px solid blue; margin-left: 200px; background-color: white;">
+Your browser does not support the canvas element.
+</canvas>
+<hr/>
+<button id=start onclick="startGame();" type=button align=center style="width: 100px; margin-left: 40%;">Start</button>
+
+<img id=carLeft src="car-left.png" style="display: none;">
+<img id=carRight src="car-right.png" style="display: none;">
+<img id=carUp src="carUp.png" style="display: none;">
+<img id=carDown src="car-down.png" style="display: none;">
+
+<script>
+	var nBars = 10;
+    var imgSize = 50;
+    var barDistance = 4*imgSize;
+    var barMinGap = 2*imgSize;
+    var barWidth = 10;
+    var barSpeed = 5;
+    var playerSpeed = 10;
+    var barPosition = [];
+    var barLength1 = [];
+    var barLength2 = [];
+    var lastBar = nBars-1;
+    
+    var initX = 50;
+    var initY = 50;
+    var currX = initX;
+    var currY = initY;
+    
+    var theGame;
+    var gameOn = 0;
+    var points = 0;
+    
+    var canvasWidth = document.getElementById("mygame").width;
+	var canvasHeight = document.getElementById("mygame").height;
+    
+    var playerImage;
+    
+    var canvas = document.getElementById("mygame");
+    var ctx = canvas.getContext("2d");
+    
+    function setUp(){
+    	currX = initX;
+    	currentY = initY;
+   		lastBar = nBars-1;
+   		gameOn = 0;
+    	points = 0;
+        
+        for(i=0; i<nBars; i++){
+        	barPosition[i] = canvasWidth/2 + i*barDistance;
+            var gap = Math.random()*imgSize + barMinGap;
+            //random function returns a random number between [0, 1)
+            barLength1[i] = (canvasHeight-gap)*Math.random();
+            barLength2[i] = canvasHeight - gap - barLength1[i];
+        }
+        
+        playerImage = document.getElementById("carRight");
+        
+        drawEverything();
+    }
+    function drawEverything(){
+    	ctx.drawImage(playerImage, currX, currY, imgSize, imgSize);
+        for(i=0;i<nBars;i++){
+        	drawBar(barPosition[i], 0, barPosition[i], barLength1[i]);
+            drawBar(barPosition[i], canvasHeight, barPosition[i], canvasHeight-barLength2[i]);
+        }
+    }
+    
+    function eraseEverything(){
+    	ctx.fillstyle = document.getElementById("mygame").style.backgroundColor;
+        ctx.fillrect(0,0,canvasWidth, canvasHeight);
+        
+    }
+    
+    function drawBar(p1x, p1y, p2x, p2y){
+    	ctx.strokeStyle = "blue";
+        ctx.beginPath();
+        ctx.moveTo(p1x,p1y);
+        ctx.lineTo(p2x, p2y);
+        ctx.lineWidth = barWidth;
+        ctx.stroke();
+    }
+    
+    
+    setUp();
+
+
+	function startGame(){
+    	if(gameOn == 0){
+        	setUp();
+            theGame = setInterval(playGame, 100);
+            gameOn = 1;
+            document.getElementById("start").disabled = true;
+            document.getElementById("start").blur(); // inverse of focus
+        }
+    }
+    function playGame(){
+    	eraseEverything();
+        
+        moveBars();
+        drawEverything();
+    }
+    
+    function moveBars(){
+    	for(i=0;i<nBars;i++){
+        	barPosition[i] -= barSpeed;
+            if (barPosition[i] < 0){
+            	barPosition[i] = barPosition[lastBar] + barDistance;
+                lastBar = i;
+                
+                var gap = Math.random()*imgSize + barMinGap;
+            	//random function returns a random number between [0, 1)
+            	barLength1[i] = (canvasHeight-gap)*Math.random();
+            	barLength2[i] = canvasHeight - gap - barLength1[i];
+                
+                points += 10;
+            }
+        }
+    }
+    function movePlayer(event){
+    	if(event.keyode == 37){//arrow left
+        	if( currX >= playerSpeed){
+            currX -= playerSpeed;
+            }else
+            	currX = 0;
+                playerImage = document.GetElementById("carLeft");
+        }else if(event.keyode == 38){//arrow up
+        	if( currY >= playerSpeed){
+            currY -= playerSpeed;
+            }else
+            	currY = 0;
+                playerImage = document.GetElementById("carUp");
+        }else if(event.keyode == 39){//arrow right
+        	if( currX <= canvasWidth-imgSize-playerSpeed){
+            currX += playerSpeed;
+            }else
+            	currX = canvasWidth-imgSize;
+                playerImage = document.GetElementById("carRight");
+        }else if(event.keyode == 40){//arrow down
+        	if( currY <= canvasHeight-imgSize-playerSpeed){
+            currY += playerSpeed;
+            }else
+            	currY = canvasHeight-imgSize;
+                playerImage = document.GetElementById("carDown");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+
+</body>
+</html>
