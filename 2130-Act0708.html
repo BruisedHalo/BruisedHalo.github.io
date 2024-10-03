@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <title>Calculator</title>
+  
+  <style>
+  	button{
+    	font-size: 20px;
+        font-weight: bold;
+        border-radius: 25%;
+        width: 50px;
+        height: 50px;
+        border: outset blue 2px;
+    }
+    input{
+    	width: 200px;
+        height: 40px;
+        font-size: 30px;
+        text-align: right;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    table{
+    	border: blue 3px solid;
+        border-radius: 5%;
+        margin: auto;
+        background-color: lightblue;
+    }
+    body{
+    	background-color: pink;
+    }
+  </style>
+</head>
+<body>
+	<table>
+		<caption><h1>Calculator Made by me</h1></caption>
+        <tr align=center>
+        	<td colspan=4>
+            	<input type=text size=20 value=0 id=result>
+            </td>
+        </tr>
+        <tr align=center>
+        	<td colspan=4>
+            	<hr/>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<button type=button onclick="DoInput('R');">&Sqrt;</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('S');">Sin</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('CS');">Cos</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('L');">Log</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<button type=button onclick="DoInput('7');">7</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('8');">8</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('9');">9</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('/');">/</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<button type=button onclick="DoInput('4');">4</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('5');">5</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('6');">6</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('*');">X</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<button type=button onclick="DoInput('1');">1</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('2');">2</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('3');">3</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('+');">+</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<button type=button onclick="DoInput('0');">0</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('C');">C</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('=');">=</button>
+            </td>
+            <td>
+            	<button type=button onclick="DoInput('-');">-</button>
+            </td>
+        </tr>
+	</table>
+  	<script>
+    	var operator="$";
+        var operand = "0";
+        function DoInput(v)
+        {
+        	if(v == 'C')
+            {
+            	operand = 0;
+                operator = "$";
+            }else if(v == '+' || v == '-' || v == '*' || v == '/')
+            {
+            	operand = eval(operand);
+                operand += v;  //concatenation
+                operator = "$";
+            }else if (v == '=')
+            {
+            	operand = eval(operand);
+                operator = "=";
+            }else if (v == 'R')
+            {
+            	operand = eval(operand);
+                operand = Math.sqrt(operand);
+                operator = "=";
+            }else if (v == 'S')
+            {
+            	operand = eval(operand);
+                operand = Math.sin(operand);
+                operator = "=";
+            }else if (v == 'CS')
+            {
+            	operand = eval(operand);
+                operand = Math.cos(operand);
+                operator = "=";
+            }else if (v == 'L')
+            {
+            	operand = eval(operand);
+                operand = Math.log(operand);
+                operator = "=";
+            }else
+            {//here are the digits input
+            	if(operator != '=')
+                {
+                	if(operand == '0')
+                    {
+                    	operand = v;
+                    }else
+                    {
+                    	operand += v;
+              		}
+                }
+                else
+                {
+                	operand = v;
+                    operator = "$";
+                }
+            }
+            document.getElementById('result').value = operand;
+        }
+    </script>
+
+</body>
+</html>
