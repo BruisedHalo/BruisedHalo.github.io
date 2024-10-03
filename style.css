@@ -1,14 +1,12 @@
 body{
-	color: cyan;
     background-color: grey;
     width: 100%;
-    margin: 10px;
+    margin: auto;
 }
 
 div{
 	width: 50%;
 	margin: auto;
 	background-color: cyan;
-	margin: 10px;
 }
 
