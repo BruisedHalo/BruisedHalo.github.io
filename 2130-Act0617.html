@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Table</title>
+  <style>
+  	#template{
+    	width: 80%;
+        height: 600px;
+        margin: auto;
+        text-align: center;
+        background-color: lightblue;
+    }
+    #logo{
+    	height: 50px;
+    	width: 80%;
+    }
+    #ad{
+    	height: 500px;
+    	width: 15%;
+    }
+    #nav{
+    	height: 500px;
+    	width: 10%;
+    }
+    #header, #footer{
+    	height: 50px;
+    }
+    #disclaimer{
+    	height: 10%;
+    }
+    #left, #right{
+    	width: 10%;
+    }
+    #center{
+    	width: 65%;
+    }
+    
+    .table1{
+    	width: 80%;
+    	margin: auto;
+    	color: blue;
+    	padding: 20px;
+    	border: dotted red 5px;
+    	border-spacing: 10px 15px;
+    	vertical-align: middle;
+    }
+    .table2{
+    	width: 80%;
+    	margin: auto;
+    	color: blue;
+        background-color: gray;
+    	padding: 20px;
+    	border: dotted red 5px;
+    	border-spacing: 10px 15px;
+    	vertical-align: middle;
+        border-collapse: collapse; /* default the value is seperate */ 
+    }
+    .table2 caption{
+    	caption-side: bottom; /* default is on the top */
+    }
+    .table2 tr:first-of-type{
+    	background-color: yellow;
+    }
+    .table2 tr:last-of-type{
+    	background-color: orange;
+    }
+    .table2 tr:nth-of-type(7){
+    	background-color: red;
+    }
+    .table2 tr:nth-of-type(5){
+    	background-color: green;
+    }
+    .table2 tr:nth-of-type(7) td:nth-of-type(5){
+    	background-color: cyan;
+    }
+    
+    .table3, .table4{
+    	width: 80%;
+    	margin: auto;
+    	color: blue;
+    	background-color: gray;
+    	padding: 20px;
+    	border: dotted red 5px;
+    	border-spacing: 10px 15px;
+    	vertical-align: middle;
+    	border-collapse: collapse; /* default the value is seperate */
+    }
+    
+    .table3 tr:nth-of-type(even){
+    	background-color: pink;
+    }
+    .table3 tr:nth-of-type(odd){
+    	background-color: cyan;
+    }
+    
+    .table4 tr:nth-of-type(3n+0){
+    	background-color: pink;
+    }
+    .table4 tr:nth-of-type(3n+1){
+    	background-color: cyan;
+    }
+    .table4 tr:nth-of-type(3n+2){
+    	background-color: lightgreen;
+    }
+    .table4 tr:nth-of-type(5) td:nth-of-type(6){
+    	background-color: purple;
+        width: 20%;
+        height: 50px;
+    }
+    
+    .timesheet{
+    	width: 50%;
+        margin: auto;
+        text-align: center;
+        border-spacing: 10px 0px;
+    }
+    .timesheet caption{
+    	font-size: 50px;
+        font-weight: bold;
+    }
+    .timesheet tr:nth-of-type(odd) td{
+    	background-color: yellow;
+        border-bottom: dotted black 2px;
+        border-top: dotted black 2px;
+    }
+    .timesheet tr:last-of-type td{
+    	background-color: grey;
+        font-weight: bold;
+    }
+    .timesheet tr:first-of-type{
+    	background-color: grey;
+        font-weight: bold;
+    }
+    .timesheet tr:last-of-type td{
+    	border: none;
+    }
+  </style>
+</head>
+<body>
+<table border=1>
+	<tr>
+    	<th>Name</th>
+        <th>Birthday</th>
+        <th>Phone</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11/28/2001</td>
+        <td>123-456-789</td>
+    </tr>
+    <tr>
+    	<td>Sparky</td>
+        <td>9/12/1998</td>
+        <td>678-852-014</td>
+    </tr>
+    <tr>
+    	<td>Tom</td>
+        <td>2/19/2004</td>
+        <td>404-698-741</td>
+    </tr>
+</table>
+
+<table border=1>
+	<tr>
+    	<th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+    </tr>
+    <tr>
+    	<td>Sparky</td>
+        <td>9</td>
+        <td>12</td>
+        <td>1998</td>
+        <td>678-852-014</td>
+    </tr>
+    <tr>
+    	<td>Tom</td>
+        <td>2</td>
+        <td>19</td>
+        <td>2004</td>
+        <td>404-698-741</td>
+    </tr>
+</table>
+
+<hr/>
+
+<table border=1>
+	<tr>
+    	<th>Type</th>
+        <th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+    </tr>
+    <tr>
+    	<td rowspan=2>Friend</td>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+    </tr>
+    <tr>
+        <td>Sparky</td>
+        <td>9</td>
+        <td>12</td>
+        <td>1998</td>
+        <td>678-852-014</td>
+    </tr>
+    <tr>
+    	<td>Family</td>
+        <td>Tom</td>
+        <td>2</td>
+        <td>19</td>
+        <td>2004</td>
+        <td>404-698-741</td>
+    </tr>
+</table>
+<hr/>
+<table border=1>
+	<caption>Savings</caption>
+	<tr>
+    	<th>Items</th>
+        <th colspan=2>Date</th>
+        <th>Saving</th>
+        <th>Total Saving</th>
+    </tr>
+    <tr>
+    	<td>TV</td>
+        <td>Nov</td>
+        <td>2</td>
+        <td>$100</td>
+        <td rowspan=3>$300</td>
+    </tr>
+    <tr>
+    	<td>PC</td>
+        <td>Jan</td>
+        <td>11</td>
+        <td>$90</td>
+    </tr>
+    <tr>
+    	<td>iPhone</td>
+        <td>May</td>
+        <td>27</td>
+        <td>$120</td>
+    </tr>
+    <tr>
+    	<td colspan=5>Big Spending Only in 2014</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 style="width:80%; height: 400px; text-align:center; background-image: url('Labs/Penguins.jpg'); background-size: 100% 100%">
+	<caption>Complex table</caption>
+    <tr>
+    	<td colspan=2>aa</td>
+        <td rowspan=5>bb</td>
+        <td colspan=2>cc</td>
+    </tr>
+    <tr>
+    	<td>dd</td>
+        <td>ee</td>
+        <td>ff</td>
+        <td>gg</td>
+    </tr>
+    <tr>
+    	<td colspan=2>hh</td>
+        <td colspan=2>ii</td>
+    </tr>
+    <tr>
+    	<td rowspan=2>jj</td>
+        <td>ll</td>
+        <td>kk</td>
+        <td rowspan=2>mm</td>
+    </tr>
+    <tr>
+    	<td>nn</td>
+        <td>oo</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 style="width:80%; height: 400px; text-align:center; background-color: pink;">
+	<tr>
+    	<td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+    </tr>
+	<tr>
+    	<td>a</td>
+        <td colspan=3 rowspan=3>d</td>
+        <td>e</td>
+    </tr>
+    <tr>
+    	<td>a</td>
+        <td>e</td>
+    </tr>
+    <tr>
+    	<td>a</td>
+        <td>e</td>
+    </tr>
+    <tr>
+    	<td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 style="width:80%; height: 400px; text-align:center; background-color: skyblue;">
+	<tr>
+    	<td colspan=3 rowspan=3>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+    </tr>
+    <tr>
+    	<td>g</td>
+        <td>h</td>
+        <td>i</td>
+        <td>j</td>
+        <td>k</td>
+    </tr>
+    <tr>
+    	<td>l</td>
+        <td>m</td>
+        <td colspan=3 rowspan=3>n</td>
+    </tr>
+    <tr>
+    	<td>o</td>
+        <td>p</td>
+        <td>q</td>
+        <td>r</td>
+        <td>s</td>
+    </tr>
+    <tr>
+    	<td>t</td>
+        <td>u</td>
+        <td>v</td>
+        <td>w</td>
+        <td>x</td>
+    </tr>
+    <tr>
+    	<td colspan=4>y</td>
+        <td colspan=4>z</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 id=template>
+	<tr>
+    	<td id=logo colspan=4>logo</td>
+        <td id=ad rowspan=4>ad</td>
+    </tr>
+    <tr>
+    	<td id=nav rowspan=3>nav</td>
+        <td id=header colspan=3>header</td>
+    </tr>
+    <tr>
+    	<td id=left>left</td>
+        <td id=center>center</td>
+        <td id=right>right</td>
+    </tr>
+    <tr>
+    	<td id=footer colspan=3>footer</td>
+    </tr>
+    <tr>
+    	<td id=disclaimer colspan=5>disclaimer</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 class=table1>
+	<tr>
+    	<th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 class=table2>
+	<caption>This is table 2</caption>
+	<tr>
+    	<th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 class=table3>
+	<caption>This is table 3</caption>
+	<tr>
+    	<th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+</table>
+<hr/>
+<table border=1 class=table4>
+	<caption>This is table 4</caption>
+	<tr>
+    	<th>Name</th>
+        <th colspan=3>Birthday</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>Jack</td>
+        <td>11</td>
+        <td>28</td>
+        <td>2001</td>
+        <td>123-456-789</td>
+        <td>100 GGC Road</td>
+        <td>22</td>
+    </tr>
+</table>
+
+<hr/>
+
+<table class="timesheet">
+	<caption>Time Sheet</caption>
+    <tr>
+    	<th>Day</th>
+        <th>Hours</th>
+    </tr>
+    <tr>
+    	<td>Monday</td>
+        <td>4</td>
+    </tr>
+    <tr>
+    	<td>Tuesday</td>
+        <td>4</td>
+    </tr>
+    <tr>
+    	<td>Wednesday</td>
+        <td>4</td>
+    </tr>
+    <tr>
+    	<td>Thursday</td>
+        <td>3</td>
+    </tr>
+    <tr>
+    	<td>Friday</td>
+        <td>3</td>
+    </tr>
+    <tr>
+    	<td>Saturday</td>
+        <td>0</td>
+    </tr>
+    <tr>
+    	<td>Sunday</td>
+        <td>0</td>
+    </tr>
+    <tr>
+    	<td>Total</td>
+        <td>18</td>
+    </tr>
+</table>
+</body>
+</html>
