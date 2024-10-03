@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <title>Graphics</title>
+</head>
+<body>
+
+<canvas id=myCanvas width=500 height=500 style="background-color: pink; border: 1px solid  blue; margin-left: 200px;"></canvas>
+<img id=myImg src="Labs/Penguins.jpg" style="display: none;">
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.rect(10, 10, 150, 75); 
+//(10,10) is the coordinate of the top left corner of the rect
+//150 is the width and 75 is the height of the rectangle
+ctx.fillStyle = "green";
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(10, 100, 150, 75);
+ctx.strokeStyle="red";
+ctx.stroke(); // stroke means border
+ctx.lineWidth = 10;
+ctx.fillStyle="lightblue";
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(200,200);//starting point of line
+ctx.lineTo(300,400);//end point
+ctx.strokeStyle="blue";
+ctx.setLineDash([10,3]);//dashes are 10px wide and spaces are 3px apart
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(420,220);
+ctx.lineTo(420,300);
+ctx.lineTo(470, 300);
+ctx.closePath();
+ctx.setLineDash([10,0]);//change from dash to solid line
+ctx.lineWidth = 1;
+ctx.strokeStyle="green";
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(320,220);
+ctx.lineTo(320,300);
+ctx.lineTo(370, 300);
+ctx.closePath();
+ctx.strokeStyle="green";
+ctx.fillStyle="cyan";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.fillStyle = "purple";
+ctx.lineWidth = 1;
+ctx.moveTo(252, 4);
+ctx.lineTo(234, 57);
+ctx.lineTo(177,58);
+ctx.lineTo(223,91);
+ctx.lineTo(206, 144);
+ctx.lineTo(252, 113);
+ctx.lineTo(298, 144);
+ctx.lineTo(281,91);
+ctx.lineTo(328, 57);
+ctx.lineTo(269, 57);
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(400,400, 50, 0,Math.PI * 2);
+//(400,400) = center
+//50 = radius
+//0 = staring angle
+//2 * Pi = ending angle (360)
+ctx.stroke();
+
+ctx.beginPath();//bottom half circle
+ctx.arc(200,400, 50, 0,Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();//top half circle
+ctx.arc(200,350, 50, 0, Math.PI, Math.PI*2);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();//three quarters of circle
+ctx.arc(80, 400, 50, 0, 3/2*Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();//three quarters of circle
+ctx.moveTo(300,400);
+ctx.arc(300,400, 50, 0, 3/2*Math.PI);
+ctx.closePath();
+ctx.fill();
+
+//Oval shape
+function drawOval(x, y, rx, ry, fcolor, scolor)
+{
+	ctx.translate(x, y);	//move it back to where it was
+	ctx.scale(1, ry/rx);	//do the transformations
+	ctx.translate(-x, -y); //move it to origin
+	ctx.beginPath();
+	ctx.arc(x, y, rx, 0, 2*Math.PI);
+    ctx.translate(x, y);  //cancel the move
+    ctx.scale(1, rx/ry);	//cancel the transformations
+    ctx.translate(-x, -y);	//cancel the move it back to where it was
+    
+    ctx.fillStyle = fcolor;
+    ctx.fill();
+    ctx.strokeStyle = scolor;
+    ctx.stroke();
+}
+
+drawOval(400, 100, 50, 100, "lightblue", "green");
+
+ctx.font="40px Arial";
+ctx.strokeStyle="cyan";
+ctx.strokeText("Hello World!", 50,490);
+
+ctx.fillStyle="red";
+ctx.fillText("Game Over", 280,490);
+
+//ctx.beginPath();
+//ctx.rect(10, 200, 200, 100); 
+//ctx.fillStyle = "green";
+//ctx.fill();
+
+var penguin = document.getElementById("myImg");
+ctx.drawImage(penguin, 10, 200, 200, 100); 
+</script>
+</body>
+</html>
