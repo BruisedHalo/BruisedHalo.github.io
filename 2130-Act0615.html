@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <style>
+  .wrapper{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  }
+  .menu0{
+  flex-grow: 1;
+  margin: 20px;
+  border: solid black 2px;
+  padding: 5px;
+  background-color: pink;
+  }
+  .menu1{
+  display: none;
+  }
+  .menu0:hover{
+  background-color: red;
+  }
+  .menu0:hover .menu1{
+  display: block;
+  width: 140px;
+  border: solid black 2px;
+  background-color: grey;
+  position: absolute;
+  top: 60px;
+  text-align: left;
+  }
+  .menu1 p:hover{
+  background-color: lightblue;
+  }
+  .triangle{
+  float: right;
+  }
+  .menu2{
+  display: none;
+  }
+  .hasSubmenu:hover .menu2{
+  display: block;
+  width: 140px;
+  border: solid black 2px;
+  background-color: lightblue;
+  position: absolute;
+  top: 50px;
+  left: 140px;
+  }
+  .menu2 p:hover{
+  background-color: yellow;
+  }
+  .zero{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition: 2s;
+  }
+  .zero:hover{
+  width: 500px;
+  background-color: blue;
+  }
+  .one{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  font-size: 10px;
+  transition: 3s;
+  }
+  .one:hover{
+  width: 400px;
+  height: 400px;
+  background-color:cyan;
+  font-size: 100px;
+  position: relative;
+  /*top: 100px;
+  left: 50px;*/
+  }
+  .two{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition: 5s;
+  }
+  .two:hover{
+  top: 200px;
+  left: 200px;
+  }
+  .three{
+   width: 300px;
+   margin: auto;
+  height: 100px;
+  background-color: lightblue;
+  font-size: 10px;
+  transform: rotateZ(50deg);
+  }
+  .four{
+   width: 300px;
+   margin: auto;
+  height: 100px;
+  background-color: lightgreen;
+  font-size: 10px;
+  transform: skew(20deg, -10deg);
+  }
+  .five{
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  background-image: url("Labs/Penguins.jpg");
+  background-size: 100% 100%;
+  transition: 500000s;
+  }
+  .five:hover{
+  transform: rotateZ(360000000deg);
+  }
+  .six{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  background-image: url("Labs/Penguins.jpg");
+  background-size: 100% 100%;
+  position: relative;
+  animation: mymove1 5s infinite;
+  }
+  @keyframes mymove1{
+  0% {top: 0px; left: 0px;}
+  25% {top: 0px; left: 400px;}
+  50%{top: 400px; left: 400px;}
+  75% {top: 400px; left: 0px;}
+  0%{ top: 0px; left: 0px;}
+  }
+  .seven{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A1cd6TMkAML._AC_SL1500_.jpg");
+  background-size: 100% 100%;
+  position: relative;
+  animation: mymove2 4s infinite;
+  }
+  @keyframes mymove2{
+  0% {top: 0px; left: 0%; transform: rotateZ(0deg);}
+  50% {top: 0px; left: 92%; transform: rotateZ(720deg);}
+  100% {top: 0px; left: 0%; transform: rotateZ(0deg);}
+  }
+  .eight{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A1cd6TMkAML._AC_SL1500_.jpg");
+  background-size: 100% 100%;
+  position: relative;
+  animation: mymove3 4s infinite;
+  }
+  @keyframes mymove3{
+  0% {top: 0px; left: 0%; transform: rotateZ(0deg);}
+  25% {top: 0px; left: 92%; transform: rotateZ(720deg);}
+  50% {top: 0px; left: 92%; transform: rotateZ(720deg);}
+  75% {top: 0px; left: 92%; transform: rotateZ(720deg);}
+  100% {top: 0px; left: 0%; transform: rotateZ(0deg);}
+  }
+  </style>
+  <title>Menu's</title>
+</head>
+<body>
+
+ <div class=wrapper>
+ 	<div class=menu0>
+    About
+    <div class=menu1>
+    <p><a href="https://www.ggc.edu">GGC</a></p>
+    <p>UGA</p>
+    <p>GA Tech</p>
+    <p>Others</p>
+    </div>
+    </div>
+    <div class=menu0>
+    Contact
+    <div class=menu1>
+    <p>By Phone</p>
+    <p>By Email</p>
+    <p>By Mail</p>
+    <p>In Person</p>
+    </div>
+    </div>
+    <div class=menu0>
+    Department
+    <div class=menu1>
+    <p>Math</p>
+    <div class=hasSubmenu>
+    <p>ITEC <span class=triangle>&#9654;</span></p>
+    <div class=menu2>
+    <p>Software</p>
+    <p>Security</p>
+    <hr/>
+    <p>Digital Media</p>
+    <p>Enterprise System</p>
+    </div>
+    </div>
+    <hr/>
+    <p>Business</p>
+    <p>Nursing</p>
+    </div>
+    </div>
+    <div class=menu0>
+    Myself
+    <div class=menu1>
+    <p>Career</p>
+    <div class=hasSubmenu>
+    <p>Education <span class=triangle>&#9654;</span></p>
+    <div class=menu2>
+    <p>College</p>
+    <p>High School</p>
+    <hr/>
+    <p>Middle School</p>
+    <p>Elementary School</p>
+    </div>
+    </div>
+    <p>Hobbies</p>
+    </div>
+    </div>
+ </div>
+ <hr/>
+ 
+ <div class=zero>
+ Zero
+ </div>
+<hr/>
+<div class=one>
+ One
+ </div>
+ <hr/>
+<div class=two>
+ Two
+ </div>
+  <hr/>
+<div class=three>
+ Three
+ </div>
+  <hr/>
+<div class=four>
+ Four
+ </div>
+ <hr/>
+<div class=five>
+ Five
+ </div>
+  <hr/>
+<div class=six>
+ Six
+ </div>
+ <hr/>
+<div class=seven>
+ </div>
+ <hr/>
+<div class=eight>
+Eight
+ </div>
+ 
+</body>
+</html>
