@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intro to Javascript</title>
+  <style>
+  #menu1 p:hover{
+  	background-color: blue;
+  }
+  #menu2 p:hover{
+  	background-color: blue;
+  }
+  #menu3 p:hover{
+  	background-color: blue;
+  }
+  </style>
+  <script>
+  function SayGreetings(){
+  	var mydate = new Date();
+    //alert(myDate);
+    var myhour = mydate.getHours();
+    if(myhour < 12){
+    	document.getElementById('greeting').innerHTML='Good Morning!';
+       }
+       else if(myhour < 18) {
+       	document.getElementById('greeting').innerHTML='Good Afternoon!';
+       }
+       else {
+       	document.getElementById('greeting').innerHTML='Good Evening!';
+       }
+  }
+  function changeLooking(){
+  	var element = document.getElementById('msg');
+    element.style.color = "red";
+    element.style.backgroundColor = "pink";
+    element.style.fontSize = "50px";	//font-size: 50px;
+    element.style.border = "blue solid 2px"; //border: blue solid 2px;
+  }
+  var ImageClicked = 0;
+  function changeImage(){
+  	var myimage = document.getElementById('myimage');
+    if(ImageClicked == 0){
+    	myimage.src = "USA-map.jpg";
+       	ImageClicked = 1;
+    } else  {
+    	myimage.src = "Labs/Penguins.jpg";
+        ImageClicked = 0;
+    }
+  }
+  var BodyChanged = 0;
+  function ChangeMe(){
+  	var mainbody = document.getElementById('me');
+    if(BodyChanged == 0){
+    	mainbody.style.backgroundColor = "purple";
+    	mainbody.style.border = "solid green 5px";
+    	mainbody.style.margin = "10% 10%";
+    	mainbody.style.transform = "rotate(7deg)";
+    	BodyChanged = 1;
+    } else {
+    	mainbody.style.backgroundColor = "white";
+    	mainbody.style.border = "none";
+    	mainbody.style.margin = "auto";
+    	mainbody.style.transform = "rotate(0deg)";
+    	BodyChanged = 0;
+    }
+  }
+  function GetInfo(){
+  	var name = prompt("What is your name?");
+    if(name == null || name == ""){
+    	info = "Good morning!";
+    }else{
+    	info = "Good morning, " + name + "!";
+    }
+    document.getElementById('good').innerHTML = info;
+  }
+  function menu1over(){
+  	document.getElementById('menu1').style.display = "block";
+  }
+  function menu1out(){
+  	document.getElementById('menu1').style.display = "none";
+  }
+  function changeColor(choice){
+  	if(choice == "other"){
+    	choice = prompt("Type your favorite color:");
+    }
+    document.getElementById('me').style.backgroundColor = choice;
+  }
+    function menu2over(){
+  	document.getElementById('menu2').style.display = "block";
+  }
+  function menu2out(){
+  	document.getElementById('menu2').style.display = "none";
+  }
+      function menu3over(){
+  	document.getElementById('menu3').style.display = "block";
+  }
+  function menu3out(){
+  	document.getElementById('menu3').style.display = "none";
+  }
+  function changeSports(which){
+  	if(which == "bb"){
+    	document.getElementById('mysports').src = "https://www.netclipart.com/pp/m/0-2791_basketball-and-soccer-ball-clipart-green-basketball-clipart.png";
+    } else if(which == "fb"){
+    	document.getElementById('mysports').src = "https://lh3.googleusercontent.com/proxy/z0GxT0L3fbZBmSjc9RPVTAfq1xOuVm49ru8YrK8TWZKVFiY6_JMheIrIJKgSUOUYoS24CbzcsQRc2HJqBW0OYJMPcjXPTfo";
+    }else if(which == "sc"){
+    	document.getElementById('mysports').src = "https://i.pinimg.com/originals/4a/dc/f8/4adcf8d883a1a357f048dff8dc596da2.png";
+    }else if(which == "sw"){
+    	document.getElementById('mysports').src = "https://www.pinclipart.com/picdir/middle/19-198929_swimming-clipart-google-emoji-png-download.png";
+    }
+  }
+  </script>
+</head>
+<body id="me" onload="GetInfo();">
+  <h1>Click the follwing element to see changes:</h1>
+  <button type=button onclick="document.getElementById('hello').innerHTML='Hello Javascript!!!';">Click Me</button>
+  <p id="hello">I am something about to change...</p>
+  <p id=hello>Something else about to change with the same id...</p>
+  <hr/>
+  <button type=button onclick="SayGreetings();">Greetings</button>
+  <h2 id="greeting"></h2>
+  <hr/>
+  <h3 id="msg" onclick="changeLooking();">This is a message</h3>
+  <hr/>
+  <img src="Labs/Penguins.jpg" ondblclick="changeImage();" id=myimage width=200px height=200px>
+  <hr/>
+  <button type=button onclick="ChangeMe();">Change Me</button>
+  <hr/>
+  <p id="good">Hello World</p>
+  <hr/>
+  <div style="width: 100%; margin: auto; height: 180px; display: flex; background-image:url('Labs/Penguins.jpg');">
+  	<div style="flex-grow: 1; margin-right: 20%;" onmouseover="menu1over();" onmouseout="menu1out();">
+    	<span style="background-color: gray; padding: 5px;">Favorite Colors</span>
+        <div id=menu1 style="display: none; background-color: pink; border: 1px green solid;">
+        	<p onclick="changeColor('red');">Red</p>
+            <p onclick="changeColor('blue');">Blue</p>
+            <p onclick="changeColor('yellow');">Yellow</p>
+            <p onclick="changeColor('other');">Other...</p>
+        </div>
+    </div>
+  	<div style="flex-grow: 1; margin-right: 20%;" onmouseover="menu2over();" onmouseout="menu2out();">
+    	<span style="background-color: gray; padding: 5px;">Favorite Websites</span>
+        <div id=menu2 style="display: none; background-color: pink; border: 1px green solid;">
+        	<p><a href="https://www.ggc.edu" target=mystuff>GGC</a></p>
+            <p><a href="http://drlai.altervista.org" target=mystuff target=mystuff>Dr. Lai</a></p>
+            <p><a href="https://www.youtube.com/embed/GGce-TLNc0o" target=mystuff target=mystuff>Video1</a></p>
+            <p><a href="https://www.youtube.com/embed/tdEhClAfPXw" target=mystuff target=mystuff>Video2</a></p>
+        </div>
+    </div>
+    <div style="flex-grow: 1; margin-right: 20%;" onmouseover="menu3over();" onmouseout="menu3out();">
+    	<span style="background-color: gray; padding: 5px;">Favorite Sports</span>
+        <div id=menu3 style="display: none; background-color: pink; border: 1px green solid;">
+        	<p onclick="changeSports('bb');">Basketball</p>
+            <p onclick="changeSports('fb');">Football</p>
+            <p onclick="changeSports('sc');">Soccer</p>
+            <p onclick="changeSports('sw');">Swimming</p>
+        </div>
+    </div>
+  </div>
+  <div>
+    	<iframe width=400px height=400px name=mystuff></iframe>
+    </div>
+    <img src="" width=200px height=200px id="mysports">
+</body>
+</html>
