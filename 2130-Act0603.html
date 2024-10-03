@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <title>Shapes and Gradients</title>
+  <style>
+  .h111{
+  background-color: pink;
+  border: solid blue 4px;
+  /*border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;*/
+  border-radius: 20px;
+  }
+  #ggc{
+  border-top-left-radius: 20px;
+  width: 75px;
+  height: 30px;
+  border: solid green 1px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  background-color: #dddddd;
+  box-shadow:5px 5px 5px green;
+  text-shadow: 2px 2px 1px white;
+  }
+  .circle{
+  width: 200px;
+  height: 200px;
+  border: solid green 2px;
+  background-color: pink;
+  border-radius: 50%;
+  }
+  .oval{
+  width: 200px;
+  height: 400px;
+  border: solid green 2px;
+  background-color: pink;
+  border-radius: 50%;
+  background-image: url("20160806_125225.jpg");
+  background-size: 100% 100%;
+  }
+  .leaf{
+  width: 200px;
+  height: 200px;
+  border: solid green 2px;
+  background-color: pink;
+  border-top-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background-image: url("20160806_125225.jpg");
+  background-size: 100% 100%;
+  }
+  .trapezoid{
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  border-left: 200px solid transparent;
+  border-top: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid blue;
+  }
+  .triangle{
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-left: 200px solid transparent;
+  border-top: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid blue;
+  }
+  .fan{
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-left: 200px solid transparent;
+  border-top: 200px solid blue;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid transparent;
+  border-radius: 50%;
+  }
+  .ring{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: outset orange 50px;
+  }
+  .disk{
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  border: solid cyan 200px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px #888;
+  }
+  #gradient1{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: linear-gradient(red, yellow);
+  background: -moz-linear-gradient(red, yellow);/*browser dependent --> doesn't work in chrome*/
+  background: -webkit-linear-gradient(red, yellow);
+  }
+  #gradient2{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-linear-gradient(left, blue, green);
+  }
+   #gradient3{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-linear-gradient(bottom right, red, yellow);
+  }
+  #gradient4{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-linear-gradient(-30deg, red, yellow);
+  }
+  #gradient5{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-linear-gradient(-30deg, red, yellow, green, cyan);
+  }
+  #gradient6{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-repeating-linear-gradient(-30deg, red, yellow 10%, green 20%);
+  }
+  #gradient7{
+  width: 200px;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-repeating-linear-gradient(transparent, blue 40px),
+  			  -moz-repeating-linear-gradient(180deg, transparent, green 20px);
+  
+  }
+  #gradient8{
+  width: 200px;
+  margin: auto;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-radial-gradient(purple, blue, cyan, green);
+  }
+  #gradient9{
+  width: 200px;
+  margin: auto;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-radial-gradient(top right,purple, blue, cyan, green);
+  }
+  #gradient10{
+  width: 200px;
+  margin: auto;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-repeating-radial-gradient(green, yellow 10%, red 20%);
+  }
+  #gradient11{
+  width: 200px;
+  margin: auto;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-repeating-radial-gradient(transparent, blue 40px),
+  			  -moz-repeating-radial-gradient(transparent, green 20px);
+  }
+  #gradient12{
+  width: 200px;
+  margin: auto;
+  height: 200px;
+  border: inset 5px blue;
+  background-color: green;
+  background: -moz-repeating-radial-gradient(bottom left,transparent, blue 40px),
+  			  -moz-repeating-radial-gradient(top right,transparent, green 20px);
+  }
+  .banner{
+  background-color: #7d110c;
+  color: #e1d8b7;
+  text-align:center;
+  border: #7d110c outset 5px;
+  width: 70%;
+  margin: auto;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  box-shadow: 10px 10px 10px #888;
+  }
+  </style>
+</head>
+<body>
+
+  <h1 class="h111">Hello World!!!</h1>
+  <p class="h111">This is a message with the same style as above.</p>
+  <hr/>
+  <div id="ggc">Sign in</div>
+  <hr/>
+  <div class="circle"></div>
+  <hr/>
+  <!-- block object -->
+  <div class="oval"></div>
+  <div class="oval"></div>
+  <hr/>
+  <!-- inline object -->
+  <img class="oval" src="20160806_125225.jpg">
+  <img class="oval" src="20160806_125225.jpg">
+  <hr/>
+  <div class="leaf"></div>
+  <hr/>
+  <div class="trapezoid"></div>
+  <hr/>
+  <div class="triangle"></div>
+  <hr/>
+  <div class="fan"></div>
+  <hr/>
+  <div class="ring"></div>
+  <hr/>
+  <div class="disk"></div>
+  <hr/>
+  <div id="gradient1">This is about gradient</div>
+  <hr/>
+  <div id="gradient2">This is about gradient</div>
+  <hr/>
+  <div id="gradient3">This is about gradient</div>
+  <hr/>
+  <div id="gradient4">This is about gradient</div>
+  <hr/>
+  <div id="gradient5">This is about gradient</div>
+  <hr/>
+  <div id="gradient6">This is about gradient</div>
+  <hr/>
+  <div id="gradient7">This is about gradient</div>
+  <hr/>
+  <div id="gradient8">This is about gradient</div>
+  <hr/>
+  <div id="gradient9">This is about gradient</div>
+  <hr/>
+  <div id="gradient10">This is about gradient</div>
+   <hr/>
+  <div id="gradient11">This is about gradient</div>
+  <hr/>
+  <div id="gradient12">This is about gradient</div>
+  <hr/>
+  <h1 class="banner">This is a banner</h1>
+</body>
+</html>
