@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <title></title>
+  <style>
+  .wrapper{
+  width: 90%
+  margin: auto;
+  height: 900px;
+  border: solid black 2px;
+  background-color: red;
+  }
+  .upper, .disclaimer{
+  width: 99%;
+  height: 835px;
+  margin: 4px;
+  border: solid blue 2px;
+  background-color: pink;
+  }
+  .disclaimer{
+  height: 45px;
+  }
+  .upper{
+  display: flex;
+  }
+  .nav, .content, .ads{
+  height: 825px;
+  margin: 2px;
+  border: solid blue 2px;
+  background-color: yellow;
+  flex-grow: 1;
+  }
+  .ads{
+  width: 50px;
+  background-image: url("https://media.giphy.com/media/qaaSZMnWkufRu/giphy.gif");
+  background-size: 100% 20%;
+  }
+  .content{
+  flex-grow: 10;
+  }
+  .header, .footer, .main{
+  width: 99%;
+  height: 60px;
+  margin: auto;
+  border: solid black 2px;
+  background-color: cyan;
+  }
+  .main{
+  height: 690px;
+  display: flex;
+  }
+  .box1, .box2, .box3{
+  flex-grow: 1;
+  height: 678px;
+  margin: 4px;
+  border: solid black 2px;
+  background-color: green;
+  }
+  .pm{
+  display: inline;
+  }
+  .myspan{
+  display: block;
+  }
+  .invisible{
+  display: none;
+  }
+  .mydiv{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: inline-block;
+  vertical-align: 100px;
+  }
+  .myimg:hover{
+  border: solid red 5px;
+  }
+  .myul{
+  list-style-type: none;
+  text-decoration: none;
+  }
+  .myul li{
+  display: inline;
+  }
+  .myul li a:link{
+  color: red;
+  background-color: green;
+  }
+  .myul li a:visited{
+  color: white;
+  background-color: pink;
+  }
+  .myul li a:hover{
+  color:blue;
+  font-size: 20px;
+  }
+  .myul li a:active{
+  font-size: 40px;
+  }
+  .pos1, .pos2, .pos3{
+  width: 200px;
+  height: 200px;
+  background-color: lightgreen;
+  opacity: 0.5;
+  border: dashed 5px lightblue;
+  }
+  .pos1{
+  position: absolute;
+  right: -100px;
+  top: 100px;
+  }
+  .pos2{
+  position: relative;
+  left: 300px;
+  top: -100px;
+  }
+  .pos3{
+  position: fixed;
+  left: 200px;
+  top: 200px;
+  }
+  .mynote{
+  background-color: yellow;
+  position: sticky;
+  top: 20px;
+  padding 5px;
+  border: solid 2px purple;
+  }
+  </style>
+</head>
+<body>
+
+<div class=wrapper>
+  <div class=upper>
+  	<div class=nav>
+    <a href="http://drlai.altervista.org/" target="mystuff">Dr.Lai</a>
+    <hr/>
+    <a href="https://www.youtube.com/embed/NEUuTh4w29k" target="myvideo">Video 1</a>
+    <hr/>
+    <a href="https://www.youtube.com/embed/mvcCZX9fJpA" target="myvideo">Video 2</a>
+    <hr/>
+    <a href="https://www.youtube.com/embed/7SD8OsM8a8Y" target="myvideo">Video 3</a>
+  	</div>
+    	<div class=content>
+        	<div class=header>
+            Made by ITEC 2130
+        	</div>
+  			<div class=main>
+  				<div class=box1>
+                	<iframe width=100% height=100% name="mystuff"></iframe>
+    			</div>
+    			<div class=box2>
+                	<iframe width=100% height=100% src="http://ggc.edu"></iframe>
+    			</div>
+    			<div class=box3>
+                	<iframe src="https://www.youtube.com/embed/NEUuTh4w29k" name="myvideo"></iframe>
+    			</div>
+  			</div>
+            <div class=footer>
+            This is my first structural web page...
+            </div>
+        </div>
+  <div class=ads>
+  </div>
+ </div>
+ <div class=disclaimer>
+ Copyright &copy; 2020-2030. This is something made up.
+ </div>
+</div>
+<hr/>
+<div class=mynote>This is an important note!</div>
+<p class=pm>This is something...</p>
+<p class=pm>This is <span class=myspan>something else</span>... and else...and else</p>
+<p class=invisible>Something that is hidden</p>
+<div class=mydiv>my div</div>
+<img class=myimg src="Labs/Penguins.jpg" width=200px height=200px>
+<hr/>
+<ul class=myul>
+	<li><a href="http://www.google.com">Home</a></li>
+    <li><a href="http://www.ggc.edu">Menu</a></li>
+    <li><a href="http://www.facebook.com">Contact</a></li>
+    <li><a href="http://www.usa.gov">About</a></li>
+ </ul>
+ <hr/>
+ <div class=pos1>absolute positioning</div>
+ <div class=pos2>relative positioning</div>
+ <div class=pos3>fixed positioning</div>
+</body>
+</html>
