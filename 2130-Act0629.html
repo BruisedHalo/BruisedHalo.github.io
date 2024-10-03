@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Photo Album</title>
+  <style>
+  .myPic{
+  background-color: pink;
+  background-size: 100% 100%;
+  background-repeat: none;
+  width: 200px;
+  height:  200px;
+  }
+  .myPic:hover{
+  border: solid red 5px;
+  }
+  #closeup{
+  display: none;
+  width: 70%;
+  height: 80%;
+  position: fixed;
+  left: 15%;
+  top: 10%;
+  background-color: pink;
+  background-size: 100% 100%;
+  background-repeat: none;
+  border: black solid 5px;
+  padding: 5px;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+  <script>
+  var GGC = [
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4SH8z76JtTOVb3t3kwXHGecFxVcgwm96dXxJ4-Mjslsc5rGA",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkN6wW7W1kXmvn_JnLLX-TM9_VM-ZH_6YuDRDsUxRnR3OsvHiI",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlw9h5krqzuORKXGT0fbn45GqjK0NaOagk4yiejmQEVzPeh8uh5Q",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyOqt9WGVhQWFfoVz8O9yfClHd8EfQtNh3v_7Q9kuoI6HUDPz4",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIwy7cqmeGaKTMTN2_N4KcjyveKQj0sDZZcVti47vLH3Q5hfZjVQ",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4VjDAhvCmhDrYhd8wXdI0SwEVaJ0CROLtYBmgSfQRY7fwg75f",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl8AxdeA2n5JZEN9lGy9azPnE4In8-XOi900hITJ1kPOGcSTwbtA"
+    ];
+  var pictures = GGC;
+  var current = 0;
+  var nShowing = 3;
+  var nPicture = pictures.length;
+  function setup() {
+  	current = 0;
+  	nPicture = pictures.length;
+    
+    var elements = document.getElementsByClassName("myPic"); //this is an array
+    elements[0].style.backgroundImage = "url('"+ pictures[current] +"')";
+    elements[1].style.backgroundImage = "url('"+ pictures[current+1] +"')";
+    elements[2].style.backgroundImage = "url('"+ pictures[current+2] +"')";
+  }
+  function moveLeft(){
+  	if(current < nPicture-nShowing){
+    	var elements = document.getElementsByClassName("myPic");
+        current++;
+    	for(i=0; i<nShowing; i++){
+    		elements[i].style.backgroundImage="url('"+ pictures[current + i]+"')";
+    	}
+    }
+  }
+    function moveRight(){
+  	if(current > 0){
+    	var elements = document.getElementsByClassName("myPic");
+        current--;
+    	for(i=0; i<nShowing;i++){
+    		elements[i].style.backgroundImage="url('"+ pictures[current + i]+"')";
+    	}
+    }
+  }
+  function showPicture(which){
+  	var element = document.getElementById("closeup");
+    element.style.display = "block";
+    element.style.backgroundImage = "url('"+ pictures[current + which]+"')";
+  }
+  function hidePicture(){
+  	var element = document.getElementById("closeup");
+    element.style.display = "none";
+  }
+  </script>
+</head>
+<body onload="setup();">
+	<table border=0 style="padding-top: 200px; margin: auto;">
+		<tr>
+    		<td colspan=5 style="text-align: center;"><h1>GGC Photo Album</h1></td>
+    	</tr>
+    	<tr>
+    		<td style="text-align: right; font-size: 100px;" onclick="moveLeft();";><a href="javascript:void(0);" style="text-decoration: none;">&lt;</a></td>
+         	<td class=myPic onclick="showPicture(0);"></td>
+    		<td class=myPic onclick="showPicture(1);"></td>
+    		<td class=myPic onclick="showPicture(2);"></td>
+    		<td style="text-align: left; font-size: 100px;" onclick="moveRight();";><a href="javascript:void(0);" style="text-decoration: none;">&gt;</a></td>
+    	</tr>
+	</table>
+    <div id=closeup style="text-align: right;">
+    <span onclick="hidePicture();" style="border: solid 1px black; cursor: pointer; color:red;">X</span>
+    </div>
+    
+    <hr/>
+    <script>
+    	$(document).ready(function() {
+        	$("#hide").click(function() {
+            	$("p").hide();
+            });
+        })
+        $(document).ready(function() {
+        	$("#show").click(function() {
+            	$("p").show();
+            });
+        })
+         $(document).ready(function() {
+        	$("#showhide").click(function() {
+            	$("p").toggle();
+            });
+        })
+         $(document).ready(function() {
+        	$("#slideup").click(function() {
+            	$("p").slideUp();
+            });
+        })
+         $(document).ready(function() {
+        	$("#slidedown").click(function() {
+            	$("p").slideDown();
+            });
+        })
+        $(document).ready(function() {
+        	$("#slideupdown").click(function() {
+            	$("p").slideToggle();
+            });
+        })            
+        $(document).ready(function() {
+        	$("#flip").click(function() {
+            	$("#ad").slideToggle();
+            });
+        })
+        $(document).ready(function() {
+        	$("#area1").click(function() {
+            	$("#area1").fadeOut(1000).fadeIn(1500).slideUp().slideDown();
+            });
+        })            
+        $(document).ready(function() {
+        	$(".myimg").mouseenter(function() {
+            	$(".myimg").css("border", "solid 3px red");
+                $("#area2").css("border", "solid 3px red");
+            });
+        })            
+        $(document).ready(function() {
+        	$(".myimg").mouseleave(function() {
+            	$(".myimg").css("border", "none");
+                $("#area2").css("border", "none");
+            });
+        })
+         $(document).ready(function() {
+        	$("#area3").hover(function() {
+            	alert("You entered area 3!");
+            },
+            function(){
+            	alert("Bye! You now left the area3!");
+            });
+        })
+         $(document).ready(function() {
+        	$("#area2").click(function() {
+            	$(".myimg").css("transition", "2s");
+                $(".myimg").css("transform", "rotate(720deg)");
+            });
+        })
+        $(document).ready(function() {
+        	$("input").focus(function() {
+            	$(this).css("background-color", "yellow");
+            });
+        })
+         $(document).ready(function() {
+        	$("input").blur(function() {
+            	$(this).css("background-color", "white");
+            });
+        })
+         $(document).ready(function() {
+        	$("#area2").click(function() {
+            	$(".myimg").css("transition", "none");
+                $(".myimg").css("border", "none");
+            });
+        })
+        var onoff=1;
+         $(document).ready(function() {
+        	$("#bulb").click(function() {
+            	if(onoff == 1){
+            		$(this).attr("src", "https://target.scene7.com/is/image/Target/GUEST_33a2d86f-8305-48fb-a4c1-6cb388060fc7?wid=488&hei=488&fmt=pjpeg");
+                	$("body").css("background-color", "rgb(20,20,20)");
+                    onoff = 0;
+                 }else{
+                 $(this).attr("src", "https://cdn.mos.cms.futurecdn.net/HaPnm6P7TZhPQGGUxtDjAg-320-80.jpg");
+                	$("body").css("background-color", "white");
+                    onoff = 1;
+                 }
+            });
+        })
+         $(document).ready(function() {
+        	$("#startR").click(function() {
+            	$("#animationArea").animate({
+                	left: "600px",
+                    borderRadius: "50%",
+                    opacity: 0.3
+                });
+            });
+        })
+        $(document).ready(function() {
+        	$("#startL").click(function() {
+            	$("#animationArea").animate({
+                	left: "0px",
+                    borderRadius: "0%",
+                    opacity: 1
+                });
+            });
+        })
+    </script>
+    <style>
+    	#ad, #flip{
+        background-color: pink;
+        border: solid 1px blue;
+        text-align: center;
+        padding: 5px;
+        }
+        #ad{
+        padding: 50px;
+        display: none;
+        }
+    </style>
+    <div id=flip>Click me to hide/show the Ad</div>
+    <div id=ad>This is my Ad</div>
+    <p>Hello world!</p>
+    <p>What's up?</p>
+    <p>GGC is great!</p>
+    <button id=hide>Click to hide</button>
+    <button id=show>Click to show</button>
+    <button id=showhide>Click to show/hide</button>
+    <button id=slideup>Click to slide up</button>
+    <button id=slidedown>Click to slide down</button>
+    <button id=slideupdown>Click to slide up/down</button>
+    <hr/>
+    <div id=area1 style="width: 200px; height: 200px; background-color: red;"></div>
+    <div id=area2 style="width: 200px; height: 200px; background-color: blue;"></div>
+    <hr/>
+    <img src="Labs/Penguins.jpg" class=myimg width=300px height=300px>
+    <hr/>
+    Name: <input text=text name=name class=name><br/>
+    Email: <input text=email name=email class=email><br/>
+    <hr/>
+    <div id=area3 style="width: 200px; height: 200px; background-color: cyan;"></div>
+    <hr/>
+    <img id=bulb src="https://cdn.mos.cms.futurecdn.net/HaPnm6P7TZhPQGGUxtDjAg-320-80.jpg">
+    <hr/>
+    <button id=startR>Start animation to the right side</button>
+    <button id=startL>Start animation to the left side</button>
+    <div id=animationArea style="width: 200px; height: 200px; background-color: green; position: absolute;">
+    Animation Demo
+    </div>
+    
+</body>
+</html>
