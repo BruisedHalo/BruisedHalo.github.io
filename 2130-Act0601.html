@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intro to DIV</title>
+  <link rel="icon" type="image/x-icon" href="https://www.freeiconspng.com/uploads/funny-icon-png-14.png">
+</head>
+<style>
+body{
+background-color: gray;
+width: 80%;
+margin: auto;
+margin-top: 10%;
+margin-bottom: 10%;
+background-image: url("https://bloximages.newyork1.vip.townnews.com/gwinnettdailypost.com/content/tncms/assets/v3/editorial/5/02/5023b4ab-e9f3-5b02-a919-ee91918475ef/59cbcb0c4a384.image.jpg?resize=400%2C400");
+background-repeat: repeat-x;/*repeat-y; repeat; no-repeat;*/
+background-attachment: fixed;/*no-scroll;*/
+}
+	.p1{
+    font-size: 30px;
+    /*
+    border-color: red;
+    border-style: dotted;
+    border-width: 5px;
+    }
+    */
+    border: red dotted 5px;
+    }
+    .p2{
+    font-size: 300%;
+    border-top: blue inset 6px;
+    border-right: 6px outset yellow;/*border-bottom and border-left*/
+    }
+    .firstDIV{
+    background-color: cyan;
+    width: 60%;
+    height:120px;
+    margin: auto;/*For left-right to be same and top-bottom to be 0*/
+    text-align: center;
+    /*padding-top: 50px;*/
+    }
+    .vert{
+    font-size: 20px;
+    vertical-align: -50px; /*Positive values mean up, and negative values mean down*/
+    }
+    #secondDIV{
+    background-color: pink;
+    border-left: dashed blue 1px;
+    border-bottom: outset green 4px;
+    margin: 10px 20px 30px 40px;
+    padding: 10px 20px 30px 40px;
+    }
+    #special{
+    background-color: yellow;
+    }
+    .div0{
+    background-color: lightblue;
+    width: 50%;
+    margin: auto;
+    height: 250px;
+    }
+    .titan{
+    border: red outset 15px;
+    margin-top: 5%;
+    margin-left: 20px;
+    }
+    .pwb{
+    background-color: yellow;
+    background-image: url("https://bloximages.newyork1.vip.townnews.com/gwinnettdailypost.com/content/tncms/assets/v3/editorial/5/02/5023b4ab-e9f3-5b02-a919-ee91918475ef/59cbcb0c4a384.image.jpg?resize=400%2C400");
+    background-size: 20% 100%;
+    
+    }
+    #div1{
+    width: 80%;
+    margin: auto;
+    height: 400px;
+    background-color: orange;
+    background-image: url("/Labs/instagram.gif");
+    background-repeat: no-repeat;
+    background-position: 50px 20px;
+    opacity: 0.7;
+    }
+    #div2{
+    width: 70%;
+    margin: auto;
+    height: 400px;
+    background-color: yellow;
+    background-image: url("/Labs/instagram.gif");
+    background-repeat: repeat-y;
+    border: double blue 15px;
+    background-origin: padding-box; /* border-box; content-box;*/
+    background-position: center top;
+    opacity: 0.7;
+    }
+    #div3{
+    width: 70%;
+    margin: auto;
+    height: 400px;
+    background-color: yellow;
+    background-image: url("/Labs/instagram.gif");
+    background-repeat: repeat-x;
+    border: double blue 15px;
+    background-origin: padding-box; /* border-box; content-box;*/
+    background-position: center center;
+    /*opacity: 0.7;*/
+    box-shadow: -10px 15px 5px red;
+    
+    }
+    #div4{
+    width: 85%;
+    margin: auto;
+    background-color: yellow;
+    height: 400px;
+    background-image: url("20160806_125225.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    }
+</style>
+<body>
+<marquee>Welcome to GGC!!!</marquee>
+
+  <p class="p1">Hello world!!!</p>
+  <p style="text-align: center;"><span class="p2">
+  This is a message with two sides.</span></p>
+  
+  <hr/>
+  <div class="firstDIV"><span class="vert">This is the first DIV.</span></div>
+  random message here.
+	<hr/>
+    <div id="secondDIV">This is the second DIV.This is the second DIV.This is the second DIV.
+    This is the second DIV.This is the second DIV.This is the second DIV.
+    This is the second DIV.This is the second DIV.This is the second DIV.
+    <span id="special">This is the second DIV.This is the second DIV.This is the second DIV.</span>
+    This is the second DIV.This is the second DIV.This is the second DIV.</div>
+    <hr/>
+    <div class="div0">div 0
+    <a href="https://www.google.com">
+    <img class="titan" src="20160806_125225.jpg" width=200px height=200px>
+    </a>
+    </div>
+    <hr/>
+    <p class="pwb">This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.This is a paragraph with a background.</p>
+    <hr/>
+    <div id="div1">This is div 1 with some background image...</div>
+    <hr>
+    <div id=div2>This is div 2 with some background image...</div>
+    <hr/>
+    <div id=div3>This is div 3 with some background <br><marquee direction="down" behavior="alternate" height=350px width=60%>
+    <figure>
+    <img src="20160806_125225.jpg" width=150px height=150px><figcaption>lovely image..</figcaption></figure></marquee></div>
+    <hr/>
+    <div id=div4>This is div 4 with some background...</div>
+</body>
+</html>
